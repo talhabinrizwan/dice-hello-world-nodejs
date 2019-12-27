@@ -13,6 +13,7 @@ pipeline {
             steps {
               sh 'docker container rm -f node || true'
               sh 'docker container run -p 8001:8080 --name node -d talhabinrizwan/test-node-app'
+              sh 'sleep 5'
               sh 'curl -I http://localhost:8001'
             }
         }
